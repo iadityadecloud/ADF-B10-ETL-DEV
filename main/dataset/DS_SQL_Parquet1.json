@@ -1,0 +1,54 @@
+{
+	"name": "DS_SQL_Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_ADLS_Parquet1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "SQL",
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "job_dtls_id",
+				"type": "INT32"
+			},
+			{
+				"name": "jobid",
+				"type": "INT32"
+			},
+			{
+				"name": "dtls_key",
+				"type": "UTF8"
+			},
+			{
+				"name": "dtls_value",
+				"type": "UTF8"
+			},
+			{
+				"name": "created_user",
+				"type": "UTF8"
+			},
+			{
+				"name": "created_date",
+				"type": "INT96"
+			},
+			{
+				"name": "updated_user",
+				"type": "UTF8"
+			},
+			{
+				"name": "updated_date",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

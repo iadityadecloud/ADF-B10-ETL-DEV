@@ -1,0 +1,57 @@
+{
+	"name": "DS_SFTP_SINK_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SFTP_SINK_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'sftp/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)\n",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "job_dtls_id",
+				"type": "INT32"
+			},
+			{
+				"name": "jobid",
+				"type": "INT32"
+			},
+			{
+				"name": "dtls_key",
+				"type": "UTF8"
+			},
+			{
+				"name": "dtls_value",
+				"type": "UTF8"
+			},
+			{
+				"name": "created_user",
+				"type": "UTF8"
+			},
+			{
+				"name": "created_date",
+				"type": "INT96"
+			},
+			{
+				"name": "updated_user",
+				"type": "UTF8"
+			},
+			{
+				"name": "updated_date",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

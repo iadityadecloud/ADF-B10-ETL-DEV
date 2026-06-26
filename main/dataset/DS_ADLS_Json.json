@@ -1,0 +1,20 @@
+{
+	"name": "DS_ADLS_Json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Json_ADLS_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "jsontest.json",
+				"fileSystem": "input"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

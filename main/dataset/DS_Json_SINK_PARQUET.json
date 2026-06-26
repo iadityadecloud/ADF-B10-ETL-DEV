@@ -1,0 +1,57 @@
+{
+	"name": "DS_Json_SINK_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Json_SINK_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'json/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)\n",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "customer_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_status",
+				"type": "UTF8"
+			},
+			{
+				"name": "order_purchase_timestamp",
+				"type": "INT96"
+			},
+			{
+				"name": "order_approved_at",
+				"type": "INT96"
+			},
+			{
+				"name": "order_delivered_carrier_date",
+				"type": "INT96"
+			},
+			{
+				"name": "order_delivered_customer_date",
+				"type": "INT96"
+			},
+			{
+				"name": "order_estimated_delivery_date",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

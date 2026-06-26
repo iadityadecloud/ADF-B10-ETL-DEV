@@ -1,0 +1,21 @@
+{
+	"name": "DS_Excel_Parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SFTP_ADLS_PARQUET1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset.csv",
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
