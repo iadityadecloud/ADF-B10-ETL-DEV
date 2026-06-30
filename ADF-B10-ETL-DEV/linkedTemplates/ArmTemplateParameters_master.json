@@ -11,6 +11,9 @@
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"value": ""
 		},
+		"LS_AZSQLDB_CSV_META_password": {
+			"value": ""
+		},
 		"LS_AZSQL_DB_password": {
 			"value": ""
 		},
@@ -84,6 +87,15 @@
 			"value": "sql-db-vb-dev"
 		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_userName": {
+			"value": "access-data-dev"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_server": {
+			"value": "sql-srvr-vb-dev10.database.windows.net"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_CSV_META_properties_typeProperties_userName": {
 			"value": "access-data-dev"
 		},
 		"LS_AZSQL_DB_properties_typeProperties_server": {

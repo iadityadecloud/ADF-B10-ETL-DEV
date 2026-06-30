@@ -7,9 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-B10-ETL-DEV"
 		},
+		"LS_SQL_ADLS_Parquet1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_Parquet1'"
+		},
 		"LS_Snowflake_Parquet_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_Snowflake_Parquet'"
+		},
+		"LS_SQL_ADLS_Parquet1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
 		"LS_Snowflake_Parquet_properties_typeProperties_database": {
 			"type": "string",
@@ -24,6 +32,23 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_ADLS_Parquet1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_SQL_ADLS_Parquet1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQL_ADLS_Parquet1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_Snowflake_Parquet')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -668,27 +693,8 @@
 					}
 				]
 			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_Snowflake_Parquet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_Snowflake_Parquet",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SnowflakeV2Table",
-				"schema": [],
-				"typeProperties": {
-					"schema": "AZURE_INTEGRATION",
-					"table": "ORDER_ITEMS_DATASET"
-				}
-			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_Snowflake_Parquet')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_SQL_ADLS_Parquet1')]"
 			]
 		}
 	]
