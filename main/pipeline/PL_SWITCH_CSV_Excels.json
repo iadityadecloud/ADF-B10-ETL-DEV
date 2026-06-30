@@ -1,9 +1,9 @@
 {
-	"name": "PL3_CLOUDSG_CSV_EXCEL",
+	"name": "PL_SWITCH_CSV_Excels",
 	"properties": {
 		"activities": [
 			{
-				"name": "LKUP_SRC_FILES",
+				"name": "LKUP_GET_FILETYPE_CSV_EXCEL",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -18,24 +18,24 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT DISTINCT L3_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
+							"value": "SELECT DISTINCT L4_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "DS_AZSQL_SRCDB",
+						"referenceName": "DS_AZSQLDB_CSVEXCEL",
 						"type": "DatasetReference"
 					}
 				}
 			},
 			{
-				"name": "Switch_SRC_LOC_CSV_EXCEL",
+				"name": "Switch_CSV_EXCEL",
 				"type": "Switch",
 				"dependsOn": [
 					{
-						"activity": "LKUP_SRC_FILES",
+						"activity": "LKUP_GET_FILETYPE_CSV_EXCEL",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -44,15 +44,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"on": {
-						"value": "@activity('LKUP_SRC_FILES').output.firstRow.L3_switch_type",
+						"value": "@activity('LKUP_GET_FILETYPE_CSV_EXCEL').output.firstRow.L4_switch_type",
 						"type": "Expression"
 					},
 					"cases": [
 						{
-							"value": "Azure",
+							"value": "CSV",
 							"activities": [
 								{
-									"name": "Exec_file_CSV",
+									"name": "Execute Pipeline1",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"policy": {
@@ -64,38 +64,19 @@
 											"referenceName": "PL_CSV_PARQUET",
 											"type": "PipelineReference"
 										},
-										"waitOnCompletion": true
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.Trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]
 						},
 						{
-							"value": "AWS",
-							"activities": [
-								{
-									"name": "Wait1",
-									"type": "Wait",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"waitTimeInSeconds": 1
-									}
-								}
-							]
-						},
-						{
-							"value": "GCP",
-							"activities": [
-								{
-									"name": "Wait2",
-									"type": "Wait",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"waitTimeInSeconds": 1
-									}
-								}
-							]
+							"value": "Excel"
 						}
 					]
 				}
@@ -104,11 +85,6 @@
 		"parameters": {
 			"Trigger": {
 				"type": "string"
-			}
-		},
-		"variables": {
-			"Mapping": {
-				"type": "String"
 			}
 		},
 		"annotations": []
