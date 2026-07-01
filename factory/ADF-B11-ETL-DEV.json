@@ -1,0 +1,15 @@
+{
+	"name": "ADF-B11-ETL-DEV",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "11d54bd3-fc38-4291-874c-c0de55d1d191",
+		"tenantId": "a86654ef-73ca-49f3-bced-ff501ba8fb5f"
+	}
+}
