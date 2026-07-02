@@ -1,0 +1,15 @@
+{
+	"name": "ADF-RG11-ETL-DEV",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f1a31e8f-780a-44d1-9f01-4a1e66cb9e2d",
+		"tenantId": "a86654ef-73ca-49f3-bced-ff501ba8fb5f"
+	}
+}
