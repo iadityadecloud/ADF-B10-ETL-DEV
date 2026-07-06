@@ -1,0 +1,60 @@
+{
+	"name": "DS_SqlserverTable_New2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SqlserverTable_new",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "product_id",
+				"type": "nvarchar"
+			},
+			{
+				"name": "product_category_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "product_name_lenght",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "product_description_lenght",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_photos_qty",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "product_weight_g",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_length_cm",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "product_height_cm",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "product_width_cm",
+				"type": "tinyint",
+				"precision": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "olist_products_dataset"
+		}
+	}
+}
