@@ -44,6 +44,9 @@
 		"LS_Excel_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_Excel_ADLS_Parquet_new_accountKey": {
+			"value": ""
+		},
 		"LS_Excel_Parquet_new_accountKey": {
 			"value": ""
 		},
@@ -78,6 +81,9 @@
 			"value": ""
 		},
 		"LS_SFTP_SINK_PARQUET_new_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_SINK_PARQUET_new1_accountKey": {
 			"value": ""
 		},
 		"LS_SFTP_SINK_PAR_New_accountKey": {
@@ -179,6 +185,9 @@
 		"LS_Excel_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_Excel_ADLS_Parquet_new_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_Excel_Parquet_new_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
@@ -213,6 +222,9 @@
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"LS_SFTP_SINK_PAR_New_properties_typeProperties_url": {

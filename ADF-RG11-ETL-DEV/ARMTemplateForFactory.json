@@ -59,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_PARQUET'"
 		},
+		"LS_Excel_ADLS_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_Parquet_new'"
+		},
 		"LS_Excel_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_Parquet_new'"
@@ -106,6 +110,10 @@
 		"LS_SFTP_SINK_PARQUET_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET_new'"
+		},
+		"LS_SFTP_SINK_PARQUET_new1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET_new1'"
 		},
 		"LS_SFTP_SINK_PAR_New_accountKey": {
 			"type": "secureString",
@@ -239,6 +247,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_Excel_ADLS_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_Excel_Parquet_new_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
@@ -284,6 +296,10 @@
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
@@ -1079,6 +1095,78 @@
 				"[concat(variables('factoryId'), '/datasets/DS_CSV_SINK_PARQUET')]",
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_CSV_META')]",
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_CSV_META1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PL_Excel')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "CPY_Excel",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_Excel_Parquet",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_Excel_SINK_PARQUET_new",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_Excel_Parquet')]",
+				"[concat(variables('factoryId'), '/datasets/DS_Excel_SINK_PARQUET_new')]"
 			]
 		},
 		{
@@ -1888,32 +1976,55 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SFTP_ADLS_PARQUET1",
+					"referenceName": "LS_Excel_ADLS_Parquet_new",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "Parquet",
+				"type": "Excel",
 				"typeProperties": {
+					"sheetName": "olist_order_reviews_dataset",
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "olist_order_reviews_dataset.csv",
+						"fileName": "olist_order_reviews_dataset.xlsx",
+						"folderPath": "Excel",
 						"fileSystem": "input"
-					},
-					"compressionCodec": "snappy"
+					}
 				},
-				"schema": []
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SFTP_ADLS_PARQUET1')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_Excel_ADLS_Parquet_new')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_Excel_SINK_PARQUET')]",
+			"name": "[concat(parameters('factoryName'), '/DS_Excel_SINK_PARQUET_new')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_SFTP_SINK_PARQUET1",
+					"referenceName": "LS_SFTP_SINK_PARQUET_new1",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -1922,7 +2033,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"folderPath": {
-							"value": "@concat(\n    'excel/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)\n\n",
+							"value": "@concat(\n    'Excel/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)\n",
 							"type": "Expression"
 						},
 						"fileSystem": "input"
@@ -1965,7 +2076,7 @@
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_SFTP_SINK_PARQUET1')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_SFTP_SINK_PARQUET_new1')]"
 			]
 		},
 		{
@@ -2756,6 +2867,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_ADLS_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_ADLS_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_ADLS_Parquet_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_Excel_Parquet_new')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -2954,6 +3082,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SFTP_SINK_PARQUET_new1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_accountKey')]"
 					}
 				}
 			},

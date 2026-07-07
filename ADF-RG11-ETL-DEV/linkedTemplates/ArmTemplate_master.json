@@ -59,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_PARQUET'"
 		},
+		"LS_Excel_ADLS_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_Parquet_new'"
+		},
 		"LS_Excel_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_Parquet_new'"
@@ -106,6 +110,10 @@
 		"LS_SFTP_SINK_PARQUET_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET_new'"
+		},
+		"LS_SFTP_SINK_PARQUET_new1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET_new1'"
 		},
 		"LS_SFTP_SINK_PAR_New_accountKey": {
 			"type": "secureString",
@@ -239,6 +247,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_Excel_ADLS_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_Excel_Parquet_new_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
@@ -284,6 +296,10 @@
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
@@ -437,6 +453,9 @@
 					"LS_Excel_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_Excel_ADLS_PARQUET_accountKey')]"
 					},
+					"LS_Excel_ADLS_Parquet_new_accountKey": {
+						"value": "[parameters('LS_Excel_ADLS_Parquet_new_accountKey')]"
+					},
 					"LS_Excel_Parquet_new_accountKey": {
 						"value": "[parameters('LS_Excel_Parquet_new_accountKey')]"
 					},
@@ -454,9 +473,6 @@
 					},
 					"LS_RESTAPI_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_accountKey')]"
-					},
-					"LS_SFTP_ADLS_PARQUET_accountKey": {
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -527,6 +543,9 @@
 					"LS_Excel_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_Excel_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
+					"LS_Excel_ADLS_Parquet_new_properties_typeProperties_url": {
+						"value": "[parameters('LS_Excel_ADLS_Parquet_new_properties_typeProperties_url')]"
+					},
 					"LS_Excel_Parquet_new_properties_typeProperties_url": {
 						"value": "[parameters('LS_Excel_Parquet_new_properties_typeProperties_url')]"
 					},
@@ -544,9 +563,6 @@
 					},
 					"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -566,6 +582,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_SFTP_ADLS_PARQUET_accountKey": {
+						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
+					},
 					"LS_SFTP_ADLS_PARQUET1_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
 					},
@@ -580,6 +599,9 @@
 					},
 					"LS_SFTP_SINK_PARQUET_new_accountKey": {
 						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_accountKey')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new1_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_accountKey')]"
 					},
 					"LS_SFTP_SINK_PAR_New_accountKey": {
 						"value": "[parameters('LS_SFTP_SINK_PAR_New_accountKey')]"
@@ -608,6 +630,9 @@
 					"LS_SqlServerTable3_password": {
 						"value": "[parameters('LS_SqlServerTable3_password')]"
 					},
+					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"
+					},
 					"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]"
 					},
@@ -622,6 +647,9 @@
 					},
 					"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_SINK_PAR_New_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_SINK_PAR_New_properties_typeProperties_url')]"
@@ -696,18 +724,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"LS_SqlserverTable_new_password": {
-						"value": "[parameters('LS_SqlserverTable_new_password')]"
-					},
-					"LS_SqlserverTable_new_properties_typeProperties_server": {
-						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_server')]"
-					},
-					"LS_SqlserverTable_new_properties_typeProperties_database": {
-						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_database')]"
-					},
-					"LS_SqlserverTable_new_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -728,6 +744,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SqlserverTable_new_password": {
+						"value": "[parameters('LS_SqlserverTable_new_password')]"
+					},
+					"LS_SqlserverTable_new_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_server')]"
+					},
+					"LS_SqlserverTable_new_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_database')]"
+					},
+					"LS_SqlserverTable_new_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_userName')]"
 					}
 				}
 			},
