@@ -11,6 +11,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"DS_Excel_SINK_PARQUET_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_Excel_SINK_PARQUET_new'"
+		},
+		"DS_Json_SINK_PARQUET_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_Json_SINK_PARQUET_new'"
+		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_CSVEXCEL'"
@@ -51,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_PARQUET'"
 		},
+		"LS_Excel_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_Parquet_new'"
+		},
 		"LS_Excel_SINK_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_SINK_PARQUET'"
@@ -58,6 +70,10 @@
 		"LS_Json_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Json_ADLS_PARQUET'"
+		},
+		"LS_Json_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Json_Parquet_new'"
 		},
 		"LS_Json_SINK_PARQUET_accountKey": {
 			"type": "secureString",
@@ -71,21 +87,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET'"
 		},
-		"LS_SFTP_ADLS_PARQUET1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET1'"
-		},
-		"LS_SFTP_SINK_PARQUET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET'"
-		},
-		"LS_SFTP_SINK_PARQUET1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PARQUET1'"
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"DS_Excel_SINK_PARQUET_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"DS_Json_SINK_PARQUET_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"type": "string",
@@ -167,6 +179,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_Excel_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_Excel_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
@@ -174,6 +190,10 @@
 		"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
+		},
+		"LS_Json_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
 		"LS_Json_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -186,22 +206,6 @@
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
-		},
-		"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
-		},
-		"LS_SFTP_SINK_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
-		},
-		"LS_SFTP_SINK_PARQUET1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
-		},
-		"LS_SNOWFLAKE_PARQUET1_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'LS_SNOWFLAKE_PARQUET1'"
 		}
 	},
 	"variables": {
@@ -220,6 +224,40 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_Excel_SINK_PARQUET_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('DS_Excel_SINK_PARQUET_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('DS_Excel_SINK_PARQUET_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_Json_SINK_PARQUET_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('DS_Json_SINK_PARQUET_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('DS_Json_SINK_PARQUET_new_accountKey')]"
 					}
 				}
 			},
@@ -421,6 +459,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_Parquet_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_Excel_SINK_PARQUET')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -449,6 +504,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_Json_ADLS_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Json_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Json_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Json_Parquet_new_accountKey')]"
 					}
 				}
 			},
@@ -501,70 +573,6 @@
 						"type": "SecureString",
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SFTP_ADLS_PARQUET1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SFTP_SINK_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SFTP_SINK_PARQUET_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SFTP_SINK_PARQUET1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SFTP_SINK_PARQUET1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SFTP_SINK_PARQUET1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SNOWFLAKE_PARQUET1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('LS_SNOWFLAKE_PARQUET1_sasUri')]"
 				}
 			},
 			"dependsOn": []
