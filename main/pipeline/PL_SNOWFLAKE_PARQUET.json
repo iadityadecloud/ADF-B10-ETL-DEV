@@ -42,13 +42,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_Snowflake_Parquet",
+						"referenceName": "DS_Snowflake_Parquet2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_SNOWFLAKE_PARQUET1",
+						"referenceName": "DS_Sink_snowflake",
 						"type": "DatasetReference"
 					}
 				]

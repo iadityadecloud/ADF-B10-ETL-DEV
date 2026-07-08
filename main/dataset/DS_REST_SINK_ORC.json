@@ -1,0 +1,23 @@
+{
+	"name": "DS_REST_SINK_ORC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_SINK_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Orc",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'RestAPI/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)\n",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"enablePhysicalSchema": true
+		},
+		"schema": []
+	}
+}

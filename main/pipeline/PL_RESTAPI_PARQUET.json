@@ -33,17 +33,46 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product_category_name']"
+								},
+								"sink": {
+									"name": "product_category_name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['product_category_name_english']"
+								},
+								"sink": {
+									"name": "product_category_name_english"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "RestResource1",
+						"referenceName": "RestResource2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_RESTAPI_SINK_PARQUET",
+						"referenceName": "DS_REST_SINK_ADLS_Parquet",
 						"type": "DatasetReference"
 					}
 				]
