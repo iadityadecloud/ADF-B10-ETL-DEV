@@ -7,6 +7,46 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-RG11-ETL-DEV"
 		},
+		"LS_CSV_SINK_PARQUET_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_SINK_PARQUET_new'"
+		},
+		"LS_Excel_ADLS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_PARQUET'"
+		},
+		"LS_Excel_ADLS_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_ADLS_Parquet_new'"
+		},
+		"LS_Excel_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_Parquet_new'"
+		},
+		"LS_Excel_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Excel_SINK_PARQUET'"
+		},
+		"LS_Json_ADLS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Json_ADLS_PARQUET'"
+		},
+		"LS_Json_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Json_Parquet_new'"
+		},
+		"LS_Json_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Json_SINK_PARQUET'"
+		},
+		"LS_RESTAPI_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_SINK_PARQUET'"
+		},
+		"LS_REST_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_SINK_PARQUET'"
+		},
 		"LS_SFTP_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET'"
@@ -18,6 +58,10 @@
 		"LS_SFTP_ADLS_Parquet_New_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_Parquet_New'"
+		},
+		"LS_SFTP_Parquet_new_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_Parquet_new'"
 		},
 		"LS_SFTP_SINK_PARQUET_accountKey": {
 			"type": "secureString",
@@ -39,37 +83,45 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_SINK_PAR_New'"
 		},
-		"LS_SQL_ADLS_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS'"
+		"LS_CSV_SINK_PARQUET_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
-		"LS_SQL_ADLS_New_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_New'"
+		"LS_Excel_ADLS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
-		"LS_SQL_ADLS_Parquet1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_Parquet1'"
+		"LS_Excel_ADLS_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
-		"LS_Snowflake_Parquet_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_Snowflake_Parquet'"
+		"LS_Excel_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
-		"LS_Snowflake_Parquet_New_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_Snowflake_Parquet_New'"
+		"LS_Excel_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
-		"LS_SqlServerTable1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SqlServerTable1'"
+		"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
-		"LS_SqlServerTable2_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SqlServerTable2'"
+		"LS_Json_Parquet_new_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
-		"LS_SqlServerTable3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SqlServerTable3'"
+		"LS_Json_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -80,6 +132,10 @@
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_Parquet_new_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
@@ -106,76 +162,182 @@
 		"LS_SNOWFLAKE_PARQUET1_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_SNOWFLAKE_PARQUET1'"
-		},
-		"LS_SQL_ADLS_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
-		},
-		"LS_SQL_ADLS_New_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
-		},
-		"LS_SQL_ADLS_Parquet1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
-		},
-		"LS_Snowflake_Parquet_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "DBAZURESNOW"
-		},
-		"LS_Snowflake_Parquet_New_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "DBAZURESNOW1"
-		},
-		"LS_Snowflake_parque_new_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'LS_Snowflake_parque_new'"
-		},
-		"LS_SqlServerTable1_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "LAPTOP-JR0T7G05"
-		},
-		"LS_SqlServerTable1_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "VBGlobal1"
-		},
-		"LS_SqlServerTable1_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "Aditya_workspace"
-		},
-		"LS_SqlServerTable2_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "LAPTOP-JR0T7G05"
-		},
-		"LS_SqlServerTable2_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "VBGlobal1"
-		},
-		"LS_SqlServerTable2_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "Aditya_workspace"
-		},
-		"LS_SqlServerTable3_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "LAPTOP-JR0T7G05"
-		},
-		"LS_SqlServerTable3_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "VBGlobal1"
-		},
-		"LS_SqlServerTable3_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "Aditya_workspace"
-		},
-		"RestService1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://retoolapi.dev/VkrVcQ/data"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_CSV_SINK_PARQUET_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_CSV_SINK_PARQUET_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_CSV_SINK_PARQUET_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_ADLS_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_ADLS_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_ADLS_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_ADLS_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_ADLS_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_ADLS_Parquet_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_Parquet_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Excel_SINK_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Excel_SINK_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Excel_SINK_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Json_ADLS_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Json_ADLS_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Json_ADLS_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Json_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Json_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Json_Parquet_new_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Json_SINK_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Json_SINK_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Json_SINK_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_RESTAPI_SINK_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_REST_SINK_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_REST_SINK_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_SFTP_ADLS_PARQUET')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -222,6 +384,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SFTP_Parquet_new')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_SFTP_Parquet_new_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SFTP_Parquet_new_accountKey')]"
 					}
 				}
 			},
@@ -322,207 +501,6 @@
 				"typeProperties": {
 					"sasUri": "[parameters('LS_SNOWFLAKE_PARQUET1_sasUri')]"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_ADLS')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SQL_ADLS_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQL_ADLS_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_ADLS_New')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SQL_ADLS_New_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQL_ADLS_New_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_ADLS_Parquet1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SQL_ADLS_Parquet1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQL_ADLS_Parquet1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Snowflake_Parquet')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SnowflakeV2",
-				"typeProperties": {
-					"authenticationType": "Basic",
-					"accountIdentifier": "SLLBUNY-QX80989",
-					"user": "AADI13",
-					"database": "[parameters('LS_Snowflake_Parquet_properties_typeProperties_database')]",
-					"warehouse": "COMPUTE_WH",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_Snowflake_Parquet_password')]"
-					},
-					"useUtcTimestamps": false
-				},
-				"version": "1.1"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Snowflake_Parquet_New')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SnowflakeV2",
-				"typeProperties": {
-					"authenticationType": "Basic",
-					"accountIdentifier": "SLLBUNY-QX80989",
-					"user": "AADI13",
-					"database": "[parameters('LS_Snowflake_Parquet_New_properties_typeProperties_database')]",
-					"warehouse": "COMPUTE_WH",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_Snowflake_Parquet_New_password')]"
-					},
-					"useUtcTimestamps": false
-				},
-				"version": "1.1"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Snowflake_parque_new')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('LS_Snowflake_parque_new_sasUri')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SqlServerTable1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"server": "[parameters('LS_SqlServerTable1_properties_typeProperties_server')]",
-					"database": "[parameters('LS_SqlServerTable1_properties_typeProperties_database')]",
-					"encrypt": "optional",
-					"trustServerCertificate": false,
-					"authenticationType": "SQL",
-					"userName": "[parameters('LS_SqlServerTable1_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SqlServerTable1_password')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SqlServerTable2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"server": "[parameters('LS_SqlServerTable2_properties_typeProperties_server')]",
-					"database": "[parameters('LS_SqlServerTable2_properties_typeProperties_database')]",
-					"encrypt": "optional",
-					"trustServerCertificate": false,
-					"authenticationType": "SQL",
-					"userName": "[parameters('LS_SqlServerTable2_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SqlServerTable2_password')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SqlServerTable3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"server": "[parameters('LS_SqlServerTable3_properties_typeProperties_server')]",
-					"database": "[parameters('LS_SqlServerTable3_properties_typeProperties_database')]",
-					"encrypt": "optional",
-					"trustServerCertificate": false,
-					"authenticationType": "SQL",
-					"userName": "[parameters('LS_SqlServerTable3_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SqlServerTable3_password')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RestService1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('RestService1_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/selfhostedintegrationRuntime01')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
 			},
 			"dependsOn": []
 		}

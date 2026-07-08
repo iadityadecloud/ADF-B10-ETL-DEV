@@ -8,10 +8,16 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"DS_BULK_SINK_Parquet_new2_accountKey": {
+			"value": ""
+		},
 		"DS_Excel_SINK_PARQUET_new_accountKey": {
 			"value": ""
 		},
 		"DS_Json_SINK_PARQUET_new_accountKey": {
+			"value": ""
+		},
+		"DS_REST_SINK_ADLS_Parquet_accountKey": {
 			"value": ""
 		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
@@ -32,13 +38,28 @@
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_BULK_ADLS_Parquet_new2_accountKey": {
+			"value": ""
+		},
 		"LS_BULK_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_Bulk_Parquet_new_accountKey": {
+			"value": ""
+		},
+		"LS_Bulk_Sink_Parquet_new_accountKey": {
 			"value": ""
 		},
 		"LS_CSV_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_CSV_ADLS_Parquet_new_accountKey": {
+			"value": ""
+		},
 		"LS_CSV_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_SINK_PARQUET_new_accountKey": {
 			"value": ""
 		},
 		"LS_Excel_ADLS_PARQUET_accountKey": {
@@ -65,6 +86,9 @@
 		"LS_RESTAPI_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_REST_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
 		"LS_SFTP_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -72,6 +96,9 @@
 			"value": ""
 		},
 		"LS_SFTP_ADLS_Parquet_New_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_Parquet_new_accountKey": {
 			"value": ""
 		},
 		"LS_SFTP_SINK_PARQUET_accountKey": {
@@ -101,6 +128,9 @@
 		"LS_Snowflake_Parquet_password": {
 			"value": ""
 		},
+		"LS_Snowflake_Parquet2_password": {
+			"value": ""
+		},
 		"LS_Snowflake_Parquet_New_password": {
 			"value": ""
 		},
@@ -119,11 +149,23 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"DS_BULK_SINK_Parquet_new2_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
 		"DS_Excel_SINK_PARQUET_new_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"DS_Json_SINK_PARQUET_new_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"DS_REST_SINK_ADLS_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"DS_Snowflake_sink_parquet_sasUri": {
+			"value": ""
+		},
+		"DS_snowflake_parquet_new_sasUri": {
+			"value": ""
 		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"value": "sql-srvr-vb-dev10.database.windows.net"
@@ -173,14 +215,29 @@
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_BULK_ADLS_Parquet_new2_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_BULK_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_Bulk_Parquet_new_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
+		"LS_Bulk_Sink_Parquet_new_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
+		"LS_CSV_ADLS_Parquet_new_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_CSV_SINK_PARQUET_new_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
 		},
 		"LS_Excel_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
@@ -206,6 +263,9 @@
 		"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
@@ -213,6 +273,9 @@
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_Parquet_new_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
 		"LS_SFTP_SINK_PARQUET_properties_typeProperties_url": {
@@ -242,7 +305,13 @@
 		"LS_SQL_ADLS_Parquet1_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_Sink_snowflake_sasUri": {
+			"value": ""
+		},
 		"LS_Snowflake_Parquet_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_Snowflake_Parquet2_properties_typeProperties_database": {
 			"value": "DBAZURESNOW"
 		},
 		"LS_Snowflake_Parquet_New_properties_typeProperties_database": {
@@ -289,6 +358,9 @@
 		},
 		"RestService1_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/VkrVcQ/data"
+		},
+		"RestService2_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/6LpKuJ/data"
 		},
 		"containerUri": {
 			"value": ""
