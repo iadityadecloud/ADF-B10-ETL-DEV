@@ -1,9 +1,9 @@
 {
-	"name": "PL_Multiple_CSVS",
+	"name": "PL_InputCSV_Parquet_ADLS",
 	"properties": {
 		"activities": [
 			{
-				"name": "CPY_Multiple_CSVS",
+				"name": "CPY_InputCSV_Parquet_ADLS",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -20,7 +20,6 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -48,13 +47,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_Blob_MultipleCSVs",
+						"referenceName": "DS_Input_Blob_Adls",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_Multiplecsv",
+						"referenceName": "DS_CSV_Parquet_Output",
 						"type": "DatasetReference"
 					}
 				]

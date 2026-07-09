@@ -1,0 +1,19 @@
+{
+	"name": "DS_ADLS_Multiplecsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_Multiplecsv",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "outputmultiplefile"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
