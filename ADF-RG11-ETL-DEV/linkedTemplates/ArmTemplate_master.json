@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_REST_SINK_ADLS_Parquet'"
 		},
+		"LS_ADLS_Multiplecsv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_Multiplecsv'"
+		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_CSVEXCEL'"
@@ -59,6 +63,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_SINK_PARQUET'"
 		},
+		"LS_Binary_Txt_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Binary_Txt'"
+		},
+		"LS_Blob_MultipleCSVs_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Blob_MultipleCSVs'"
+		},
 		"LS_Bulk_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Bulk_Parquet_new'"
@@ -74,6 +86,10 @@
 		"LS_CSV_ADLS_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_Parquet_new'"
+		},
+		"LS_CSV_Parquet_Output_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_Parquet_Output'"
 		},
 		"LS_CSV_SINK_PARQUET_accountKey": {
 			"type": "secureString",
@@ -99,6 +115,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_SINK_PARQUET'"
 		},
+		"LS_Input_Blob_Adls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Input_Blob_Adls'"
+		},
 		"LS_Json_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Json_ADLS_PARQUET'"
@@ -110,6 +130,10 @@
 		"LS_Json_SINK_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Json_SINK_PARQUET'"
+		},
+		"LS_Output_Binary_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Output_Binary'"
 		},
 		"LS_RESTAPI_SINK_PARQUET_accountKey": {
 			"type": "secureString",
@@ -223,6 +247,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'DS_snowflake_parquet_new'"
 		},
+		"LS_ADLS_Multiplecsv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sql-srvr-vb-dev10.database.windows.net"
@@ -311,6 +339,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
+		"LS_CSV_Parquet_Output_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
@@ -346,6 +378,10 @@
 		"LS_Json_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_Output_Binary_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
 		"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -525,6 +561,9 @@
 					"DS_REST_SINK_ADLS_Parquet_accountKey": {
 						"value": "[parameters('DS_REST_SINK_ADLS_Parquet_accountKey')]"
 					},
+					"LS_ADLS_Multiplecsv_accountKey": {
+						"value": "[parameters('LS_ADLS_Multiplecsv_accountKey')]"
+					},
 					"LS_AZSQLDB_CSVEXCEL_password": {
 						"value": "[parameters('LS_AZSQLDB_CSVEXCEL_password')]"
 					},
@@ -549,20 +588,17 @@
 					"LS_BULK_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_BULK_SINK_PARQUET_accountKey')]"
 					},
+					"LS_Binary_Txt_connectionString": {
+						"value": "[parameters('LS_Binary_Txt_connectionString')]"
+					},
+					"LS_Blob_MultipleCSVs_connectionString": {
+						"value": "[parameters('LS_Blob_MultipleCSVs_connectionString')]"
+					},
 					"LS_Bulk_Parquet_new_accountKey": {
 						"value": "[parameters('LS_Bulk_Parquet_new_accountKey')]"
 					},
 					"LS_Bulk_Sink_Parquet_new_accountKey": {
 						"value": "[parameters('LS_Bulk_Sink_Parquet_new_accountKey')]"
-					},
-					"LS_CSV_ADLS_PARQUET_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_PARQUET_accountKey')]"
-					},
-					"LS_CSV_ADLS_Parquet_new_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_Parquet_new_accountKey')]"
-					},
-					"LS_CSV_SINK_PARQUET_accountKey": {
-						"value": "[parameters('LS_CSV_SINK_PARQUET_accountKey')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -584,6 +620,9 @@
 					},
 					"DS_snowflake_parquet_new_sasUri": {
 						"value": "[parameters('DS_snowflake_parquet_new_sasUri')]"
+					},
+					"LS_ADLS_Multiplecsv_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_Multiplecsv_properties_typeProperties_url')]"
 					},
 					"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server')]"
@@ -644,15 +683,6 @@
 					},
 					"LS_Bulk_Sink_Parquet_new_properties_typeProperties_url": {
 						"value": "[parameters('LS_Bulk_Sink_Parquet_new_properties_typeProperties_url')]"
-					},
-					"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_CSV_ADLS_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_CSV_ADLS_Parquet_new_properties_typeProperties_url": {
-						"value": "[parameters('LS_CSV_ADLS_Parquet_new_properties_typeProperties_url')]"
-					},
-					"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_CSV_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -672,6 +702,18 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_CSV_ADLS_PARQUET_accountKey": {
+						"value": "[parameters('LS_CSV_ADLS_PARQUET_accountKey')]"
+					},
+					"LS_CSV_ADLS_Parquet_new_accountKey": {
+						"value": "[parameters('LS_CSV_ADLS_Parquet_new_accountKey')]"
+					},
+					"LS_CSV_Parquet_Output_accountKey": {
+						"value": "[parameters('LS_CSV_Parquet_Output_accountKey')]"
+					},
+					"LS_CSV_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_CSV_SINK_PARQUET_accountKey')]"
+					},
 					"LS_CSV_SINK_PARQUET_new_accountKey": {
 						"value": "[parameters('LS_CSV_SINK_PARQUET_new_accountKey')]"
 					},
@@ -687,6 +729,9 @@
 					"LS_Excel_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_Excel_SINK_PARQUET_accountKey')]"
 					},
+					"LS_Input_Blob_Adls_connectionString": {
+						"value": "[parameters('LS_Input_Blob_Adls_connectionString')]"
+					},
 					"LS_Json_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_Json_ADLS_PARQUET_accountKey')]"
 					},
@@ -695,6 +740,9 @@
 					},
 					"LS_Json_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_Json_SINK_PARQUET_accountKey')]"
+					},
+					"LS_Output_Binary_accountKey": {
+						"value": "[parameters('LS_Output_Binary_accountKey')]"
 					},
 					"LS_RESTAPI_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_accountKey')]"
@@ -714,20 +762,17 @@
 					"LS_SFTP_Parquet_new_accountKey": {
 						"value": "[parameters('LS_SFTP_Parquet_new_accountKey')]"
 					},
-					"LS_SFTP_SINK_PARQUET_accountKey": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_accountKey')]"
+					"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
-					"LS_SFTP_SINK_PARQUET1_accountKey": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET1_accountKey')]"
+					"LS_CSV_ADLS_Parquet_new_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_ADLS_Parquet_new_properties_typeProperties_url')]"
 					},
-					"LS_SFTP_SINK_PARQUET_new_accountKey": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_accountKey')]"
+					"LS_CSV_Parquet_Output_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_Parquet_Output_properties_typeProperties_url')]"
 					},
-					"LS_SFTP_SINK_PARQUET_new1_accountKey": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_accountKey')]"
-					},
-					"LS_SFTP_SINK_PAR_New_accountKey": {
-						"value": "[parameters('LS_SFTP_SINK_PAR_New_accountKey')]"
+					"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_SINK_PARQUET_properties_typeProperties_url')]"
 					},
 					"LS_CSV_SINK_PARQUET_new_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_SINK_PARQUET_new_properties_typeProperties_url')]"
@@ -753,6 +798,9 @@
 					"LS_Json_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_Json_SINK_PARQUET_properties_typeProperties_url')]"
 					},
+					"LS_Output_Binary_properties_typeProperties_url": {
+						"value": "[parameters('LS_Output_Binary_properties_typeProperties_url')]"
+					},
 					"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url')]"
 					},
@@ -770,24 +818,6 @@
 					},
 					"LS_SFTP_Parquet_new_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_Parquet_new_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_SINK_PARQUET1_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET1_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_SINK_PAR_New_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_SINK_PAR_New_properties_typeProperties_url')]"
-					},
-					"LS_SNOWFLAKE_PARQUET1_sasUri": {
-						"value": "[parameters('LS_SNOWFLAKE_PARQUET1_sasUri')]"
 					}
 				}
 			},
@@ -808,6 +838,21 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SFTP_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_accountKey')]"
+					},
+					"LS_SFTP_SINK_PARQUET1_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET1_accountKey')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_accountKey')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new1_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_accountKey')]"
+					},
+					"LS_SFTP_SINK_PAR_New_accountKey": {
+						"value": "[parameters('LS_SFTP_SINK_PAR_New_accountKey')]"
 					},
 					"LS_SQL_ADLS_accountKey": {
 						"value": "[parameters('LS_SQL_ADLS_accountKey')]"
@@ -835,6 +880,24 @@
 					},
 					"LS_SqlServerTable3_password": {
 						"value": "[parameters('LS_SqlServerTable3_password')]"
+					},
+					"LS_SFTP_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_SINK_PARQUET1_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET1_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PARQUET_new1_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_SINK_PAR_New_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_SINK_PAR_New_properties_typeProperties_url')]"
+					},
+					"LS_SNOWFLAKE_PARQUET1_sasUri": {
+						"value": "[parameters('LS_SNOWFLAKE_PARQUET1_sasUri')]"
 					},
 					"LS_SQL_ADLS_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_ADLS_properties_typeProperties_url')]"

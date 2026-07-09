@@ -20,6 +20,9 @@
 		"DS_REST_SINK_ADLS_Parquet_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_Multiplecsv_accountKey": {
+			"value": ""
+		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"value": ""
 		},
@@ -44,6 +47,12 @@
 		"LS_BULK_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_Binary_Txt_connectionString": {
+			"value": ""
+		},
+		"LS_Blob_MultipleCSVs_connectionString": {
+			"value": ""
+		},
 		"LS_Bulk_Parquet_new_accountKey": {
 			"value": ""
 		},
@@ -54,6 +63,9 @@
 			"value": ""
 		},
 		"LS_CSV_ADLS_Parquet_new_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_Parquet_Output_accountKey": {
 			"value": ""
 		},
 		"LS_CSV_SINK_PARQUET_accountKey": {
@@ -74,6 +86,9 @@
 		"LS_Excel_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_Input_Blob_Adls_connectionString": {
+			"value": ""
+		},
 		"LS_Json_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -81,6 +96,9 @@
 			"value": ""
 		},
 		"LS_Json_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_Output_Binary_accountKey": {
 			"value": ""
 		},
 		"LS_RESTAPI_SINK_PARQUET_accountKey": {
@@ -167,6 +185,9 @@
 		"DS_snowflake_parquet_new_sasUri": {
 			"value": ""
 		},
+		"LS_ADLS_Multiplecsv_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"value": "sql-srvr-vb-dev10.database.windows.net"
 		},
@@ -233,6 +254,9 @@
 		"LS_CSV_ADLS_Parquet_new_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
+		"LS_CSV_Parquet_Output_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
@@ -259,6 +283,9 @@
 		},
 		"LS_Json_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
+		},
+		"LS_Output_Binary_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
 		"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"

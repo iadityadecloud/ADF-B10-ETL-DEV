@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_REST_SINK_ADLS_Parquet'"
 		},
+		"LS_ADLS_Multiplecsv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_Multiplecsv'"
+		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_CSVEXCEL'"
@@ -59,6 +63,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_SINK_PARQUET'"
 		},
+		"LS_Binary_Txt_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Binary_Txt'"
+		},
+		"LS_Blob_MultipleCSVs_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_Blob_MultipleCSVs'"
+		},
 		"LS_Bulk_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Bulk_Parquet_new'"
@@ -66,18 +78,6 @@
 		"LS_Bulk_Sink_Parquet_new_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Bulk_Sink_Parquet_new'"
-		},
-		"LS_CSV_ADLS_PARQUET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_PARQUET'"
-		},
-		"LS_CSV_ADLS_Parquet_new_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_Parquet_new'"
-		},
-		"LS_CSV_SINK_PARQUET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_SINK_PARQUET'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -106,6 +106,10 @@
 		"DS_snowflake_parquet_new_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'DS_snowflake_parquet_new'"
+		},
+		"LS_ADLS_Multiplecsv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
 		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"type": "string",
@@ -186,18 +190,6 @@
 		"LS_Bulk_Sink_Parquet_new_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
-		},
-		"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
-		},
-		"LS_CSV_ADLS_Parquet_new_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
-		},
-		"LS_CSV_SINK_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -311,6 +303,23 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"sasUri": "[parameters('DS_snowflake_parquet_new_sasUri')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_ADLS_Multiplecsv')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_ADLS_Multiplecsv_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_ADLS_Multiplecsv_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -477,6 +486,32 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_Binary_Txt')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_Binary_Txt_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Blob_MultipleCSVs')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_Blob_MultipleCSVs_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_Bulk_Parquet_new')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -505,57 +540,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_Bulk_Sink_Parquet_new_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_CSV_ADLS_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_CSV_ADLS_PARQUET_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_CSV_ADLS_PARQUET_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_CSV_ADLS_Parquet_new')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_CSV_ADLS_Parquet_new_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_CSV_ADLS_Parquet_new_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_CSV_SINK_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_CSV_SINK_PARQUET_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_CSV_SINK_PARQUET_accountKey')]"
 					}
 				}
 			},
