@@ -1,0 +1,21 @@
+{
+	"name": "LS_SqlServer11",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "LAPTOP-JR0T7G05",
+			"database": "Visionboard_migration",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "Aditya_workspace",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0NDZmY2RiYy1mMzIxLTQ4Y2YtYjMyMC02Mzc2MDhmNDM0OTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhostedintegrationRuntime01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
