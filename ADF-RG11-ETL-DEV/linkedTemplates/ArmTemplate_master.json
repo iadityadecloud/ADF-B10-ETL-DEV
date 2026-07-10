@@ -139,6 +139,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_SINK_PARQUET'"
 		},
+		"LS_REST_Parquet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_Parquet'"
+		},
 		"LS_REST_SINK_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_REST_SINK_PARQUET'"
@@ -387,9 +391,17 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_REST_Parquet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/6LpKuJ/data"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -747,6 +759,9 @@
 					"LS_RESTAPI_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_accountKey')]"
 					},
+					"LS_REST_Parquet_accountKey": {
+						"value": "[parameters('LS_REST_Parquet_accountKey')]"
+					},
 					"LS_REST_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
 					},
@@ -755,12 +770,6 @@
 					},
 					"LS_SFTP_ADLS_PARQUET1_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
-					},
-					"LS_SFTP_ADLS_Parquet_New_accountKey": {
-						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_accountKey')]"
-					},
-					"LS_SFTP_Parquet_new_accountKey": {
-						"value": "[parameters('LS_SFTP_Parquet_new_accountKey')]"
 					},
 					"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_ADLS_PARQUET_properties_typeProperties_url')]"
@@ -804,20 +813,20 @@
 					"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url')]"
 					},
+					"LS_REST_Parquet_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_Parquet_properties_typeProperties_url')]"
+					},
 					"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_REST_SINK_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_RestResource_properties_typeProperties_url": {
+						"value": "[parameters('LS_RestResource_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_Parquet_new_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_Parquet_new_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -838,6 +847,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SFTP_ADLS_Parquet_New_accountKey": {
+						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_accountKey')]"
+					},
+					"LS_SFTP_Parquet_new_accountKey": {
+						"value": "[parameters('LS_SFTP_Parquet_new_accountKey')]"
 					},
 					"LS_SFTP_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_SFTP_SINK_PARQUET_accountKey')]"
@@ -880,6 +895,12 @@
 					},
 					"LS_SqlServerTable3_password": {
 						"value": "[parameters('LS_SqlServerTable3_password')]"
+					},
+					"LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_Parquet_new_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_Parquet_new_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_SINK_PARQUET_properties_typeProperties_url')]"
@@ -952,9 +973,6 @@
 					},
 					"RestService1_properties_typeProperties_url": {
 						"value": "[parameters('RestService1_properties_typeProperties_url')]"
-					},
-					"RestService2_properties_typeProperties_url": {
-						"value": "[parameters('RestService2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -975,6 +993,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"RestService2_properties_typeProperties_url": {
+						"value": "[parameters('RestService2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -990,6 +1011,26 @@
 				"mode": "incremental",
 				"templateLink": {
 					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-RG11-ETL-DEV_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "ADF-RG11-ETL-DEV_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -1011,17 +1052,17 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ADF-RG11-ETL-DEV_ArmTemplate_3')]"
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-RG11-ETL-DEV_ArmTemplate_4')]"
 			]
 		},
 		{
-			"name": "ADF-RG11-ETL-DEV_ArmTemplate_5",
+			"name": "ADF-RG11-ETL-DEV_ArmTemplate_6",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2024-03-01",
 			"properties": {
 				"mode": "incremental",
 				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
@@ -1031,7 +1072,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'ADF-RG11-ETL-DEV_ArmTemplate_4')]"
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-RG11-ETL-DEV_ArmTemplate_5')]"
 			]
 		}
 	]

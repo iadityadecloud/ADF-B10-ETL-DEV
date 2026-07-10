@@ -104,6 +104,9 @@
 		"LS_RESTAPI_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_REST_Parquet_accountKey": {
+			"value": ""
+		},
 		"LS_REST_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -290,8 +293,14 @@
 		"LS_RESTAPI_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_REST_Parquet_properties_typeProperties_url": {
+			"value": "https://adlsadityaraw001.dfs.core.windows.net/"
+		},
 		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc001.dfs.core.windows.net/"
+		},
+		"LS_RestResource_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/6LpKuJ/data"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
