@@ -1,0 +1,14 @@
+{
+	"name": "PL_IfCondition",
+	"properties": {
+		"activities": [
+			{
+				"name": "If_CSVFILECHECK",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": []
+			}
+		],
+		"annotations": []
+	}
+}
