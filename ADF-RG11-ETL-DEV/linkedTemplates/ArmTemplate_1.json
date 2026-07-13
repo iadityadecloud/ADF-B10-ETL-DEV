@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_SINK_PARQUET'"
 		},
+		"LS_Getmetadata_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Getmetadata'"
+		},
 		"LS_Input_Blob_Adls_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Input_Blob_Adls'"
@@ -78,10 +82,6 @@
 		"LS_SFTP_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET'"
-		},
-		"LS_SFTP_ADLS_PARQUET1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET1'"
 		},
 		"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -119,6 +119,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_Getmetadata_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsaditya001.dfs.core.windows.net/"
+		},
 		"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
@@ -152,10 +156,6 @@
 			"defaultValue": "https://retoolapi.dev/6LpKuJ/data"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
-		},
-		"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
 		}
@@ -312,6 +312,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_Excel_SINK_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_Getmetadata')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_Getmetadata_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_Getmetadata_accountKey')]"
 					}
 				}
 			},
@@ -476,23 +493,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SFTP_ADLS_PARQUET1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
 					}
 				}
 			},

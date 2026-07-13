@@ -115,6 +115,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_Excel_SINK_PARQUET'"
 		},
+		"LS_Getmetadata_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Getmetadata'"
+		},
 		"LS_Input_Blob_Adls_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_Input_Blob_Adls'"
@@ -206,6 +210,10 @@
 		"LS_Snowflake_Parquet_New_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_Snowflake_Parquet_New'"
+		},
+		"LS_SqlServer11_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SqlServer11'"
 		},
 		"LS_SqlServerTable1_password": {
 			"type": "secureString",
@@ -371,6 +379,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_Getmetadata_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsaditya001.dfs.core.windows.net/"
+		},
 		"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsadityaraw01.dfs.core.windows.net/"
@@ -474,6 +486,18 @@
 		"LS_Snowflake_parque_new_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_Snowflake_parque_new'"
+		},
+		"LS_SqlServer11_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "LAPTOP-JR0T7G05"
+		},
+		"LS_SqlServer11_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Visionboard_migration"
+		},
+		"LS_SqlServer11_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aditya_workspace"
 		},
 		"LS_SqlServerTable1_properties_typeProperties_server": {
 			"type": "string",
@@ -741,6 +765,9 @@
 					"LS_Excel_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_Excel_SINK_PARQUET_accountKey')]"
 					},
+					"LS_Getmetadata_accountKey": {
+						"value": "[parameters('LS_Getmetadata_accountKey')]"
+					},
 					"LS_Input_Blob_Adls_connectionString": {
 						"value": "[parameters('LS_Input_Blob_Adls_connectionString')]"
 					},
@@ -767,9 +794,6 @@
 					},
 					"LS_SFTP_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
-					},
-					"LS_SFTP_ADLS_PARQUET1_accountKey": {
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
 					},
 					"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_ADLS_PARQUET_properties_typeProperties_url')]"
@@ -798,6 +822,9 @@
 					"LS_Excel_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_Excel_SINK_PARQUET_properties_typeProperties_url')]"
 					},
+					"LS_Getmetadata_properties_typeProperties_url": {
+						"value": "[parameters('LS_Getmetadata_properties_typeProperties_url')]"
+					},
 					"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_Json_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
@@ -824,9 +851,6 @@
 					},
 					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
-						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -847,6 +871,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SFTP_ADLS_PARQUET1_accountKey": {
+						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_accountKey')]"
 					},
 					"LS_SFTP_ADLS_Parquet_New_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_accountKey')]"
@@ -895,6 +922,9 @@
 					},
 					"LS_SqlServerTable3_password": {
 						"value": "[parameters('LS_SqlServerTable3_password')]"
+					},
+					"LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_ADLS_PARQUET1_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_Parquet_New_properties_typeProperties_url')]"
@@ -970,9 +1000,6 @@
 					},
 					"LS_SqlServerTable3_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SqlServerTable3_properties_typeProperties_userName')]"
-					},
-					"RestService1_properties_typeProperties_url": {
-						"value": "[parameters('RestService1_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -993,6 +1020,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
 					},
 					"RestService2_properties_typeProperties_url": {
 						"value": "[parameters('RestService2_properties_typeProperties_url')]"
@@ -1037,8 +1067,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_SqlServer11_password": {
+						"value": "[parameters('LS_SqlServer11_password')]"
+					},
 					"LS_SqlserverTable_new_password": {
 						"value": "[parameters('LS_SqlserverTable_new_password')]"
+					},
+					"LS_SqlServer11_properties_typeProperties_server": {
+						"value": "[parameters('LS_SqlServer11_properties_typeProperties_server')]"
+					},
+					"LS_SqlServer11_properties_typeProperties_database": {
+						"value": "[parameters('LS_SqlServer11_properties_typeProperties_database')]"
+					},
+					"LS_SqlServer11_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SqlServer11_properties_typeProperties_userName')]"
 					},
 					"LS_SqlserverTable_new_properties_typeProperties_server": {
 						"value": "[parameters('LS_SqlserverTable_new_properties_typeProperties_server')]"

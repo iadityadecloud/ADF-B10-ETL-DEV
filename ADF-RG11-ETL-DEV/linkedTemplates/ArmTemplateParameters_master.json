@@ -86,6 +86,9 @@
 		"LS_Excel_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_Getmetadata_accountKey": {
+			"value": ""
+		},
 		"LS_Input_Blob_Adls_connectionString": {
 			"value": ""
 		},
@@ -153,6 +156,9 @@
 			"value": ""
 		},
 		"LS_Snowflake_Parquet_New_password": {
+			"value": ""
+		},
+		"LS_SqlServer11_password": {
 			"value": ""
 		},
 		"LS_SqlServerTable1_password": {
@@ -278,6 +284,9 @@
 		"LS_Excel_SINK_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityasrc01.dfs.core.windows.net/"
 		},
+		"LS_Getmetadata_properties_typeProperties_url": {
+			"value": "https://adlsaditya001.dfs.core.windows.net/"
+		},
 		"LS_Json_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsadityaraw01.dfs.core.windows.net/"
 		},
@@ -355,6 +364,15 @@
 		},
 		"LS_Snowflake_parque_new_sasUri": {
 			"value": ""
+		},
+		"LS_SqlServer11_properties_typeProperties_server": {
+			"value": "LAPTOP-JR0T7G05"
+		},
+		"LS_SqlServer11_properties_typeProperties_database": {
+			"value": "Visionboard_migration"
+		},
+		"LS_SqlServer11_properties_typeProperties_userName": {
+			"value": "Aditya_workspace"
 		},
 		"LS_SqlServerTable1_properties_typeProperties_server": {
 			"value": "LAPTOP-JR0T7G05"
