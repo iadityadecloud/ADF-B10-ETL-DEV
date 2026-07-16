@@ -1,0 +1,18 @@
+{
+	"name": "DS_Binary_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Binary_input",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "chat.txt",
+				"container": "input"
+			}
+		}
+	}
+}

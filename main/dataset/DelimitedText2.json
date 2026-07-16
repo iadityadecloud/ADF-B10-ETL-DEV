@@ -1,8 +1,8 @@
 {
-	"name": "DS_Getmetadata",
+	"name": "DelimitedText2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_Getmetadata",
+			"referenceName": "LS_CSV2_DATA",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

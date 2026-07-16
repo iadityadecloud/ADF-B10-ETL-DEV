@@ -1,0 +1,17 @@
+{
+	"name": "DS_SINK_TXT_ADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SINK_TXT_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "output"
+			}
+		}
+	}
+}

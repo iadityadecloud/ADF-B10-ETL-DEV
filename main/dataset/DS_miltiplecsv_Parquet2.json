@@ -1,0 +1,19 @@
+{
+	"name": "DS_miltiplecsv_Parquet2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_miltiplecsv_Parquet2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "multipleoutput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

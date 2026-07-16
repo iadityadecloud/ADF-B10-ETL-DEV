@@ -1,5 +1,5 @@
 {
-	"name": "PL_GetMetaData",
+	"name": "PL_metadata",
 	"properties": {
 		"activities": [
 			{
@@ -16,15 +16,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DS_Getmetadata",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"fieldList": [
-						"childItems"
-					],
+					"fieldList": [],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {

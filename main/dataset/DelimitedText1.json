@@ -1,8 +1,8 @@
 {
-	"name": "DS_Getmetadata",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_Getmetadata",
+			"referenceName": "LS_ADLS_TO_BLOB",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "industry_sic1.csv",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
