@@ -1,0 +1,25 @@
+{
+	"name": "SCH_TRIGGER_SQL_MIGRATION_ADLS",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 20,
+				"startTime": "2026-07-19T11:49:00",
+				"endTime": "2026-07-21T11:49:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
