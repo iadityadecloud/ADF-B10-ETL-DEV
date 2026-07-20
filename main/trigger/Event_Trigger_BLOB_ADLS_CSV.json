@@ -1,0 +1,25 @@
+{
+	"name": "Event_Trigger_BLOB_ADLS_CSV",
+	"properties": {
+		"description": "creating storage event trigger",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_Blob_Event_Trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/input",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/bf46e8fb-67aa-4cfa-ba53-7d9088623290/resourceGroups/RG_DEV_B11_ETL/providers/Microsoft.Storage/storageAccounts/adlsaditya001",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
