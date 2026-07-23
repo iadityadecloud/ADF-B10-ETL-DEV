@@ -1,0 +1,12 @@
+{
+	"name": "SqlServerTable4_Migration",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SqlServer3_migration_test",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
