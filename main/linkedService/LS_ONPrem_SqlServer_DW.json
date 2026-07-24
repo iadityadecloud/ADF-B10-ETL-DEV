@@ -1,0 +1,21 @@
+{
+	"name": "LS_ONPrem_SqlServer_DW",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "LAPTOP-JR0T7G05",
+			"database": "RetailDW_Dev",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "Aditya_workspace",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyOWUzZjA4Yi00NTZlLTRjNjUtYmE0NC0zMGRkOWRiN2ZjNGEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhostedintegrationRuntime01",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
