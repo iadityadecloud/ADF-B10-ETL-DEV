@@ -1,5 +1,5 @@
 {
-	"name": "PL_ParentPipeline",
+	"name": "PL_ParentPipeline_Orchestration",
 	"properties": {
 		"activities": [
 			{
@@ -25,9 +25,10 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SqlServerTable4_Migration",
+						"referenceName": "DS_SqlServerTable_LKUP",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -47,6 +48,7 @@
 						"value": "@activity('LKUP_SQLTABLE_WATRMRK_DW').output.value\n",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Execute Pipeline1",
@@ -58,10 +60,16 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "PL_Child_Pipeline",
+									"referenceName": "PL_Child_Pipeline_Incremental",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"TableSchema": "@item().TableSchema",
+									"TableName": "@item().TableName",
+									"WatermarkColumn": "@item().WatermarkColumn",
+									"LastLoadValue": "@item().LastLoadValue"
+								}
 							}
 						}
 					]

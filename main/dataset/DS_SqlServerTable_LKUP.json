@@ -1,5 +1,5 @@
 {
-	"name": "SqlServerTable4_Migration",
+	"name": "DS_SqlServerTable_LKUP",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SqlServer3_migration_test",
