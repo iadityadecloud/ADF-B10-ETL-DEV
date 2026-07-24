@@ -16,6 +16,7 @@
 		"connectVia": {
 			"referenceName": "selfhostedintegrationRuntime01",
 			"type": "IntegrationRuntimeReference"
-		}
+		},
+		"description": "Selfhosted IR for Onprem Server Parent"
 	}
 }
